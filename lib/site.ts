@@ -17,6 +17,12 @@ export const site = {
     // Text for the Google Maps embed on the contact page (placeholder)
     mapQuery: "Dhaka, Bangladesh",
   },
+  // Homepage hero. Placeholder video and poster; replace the files in
+  // public/videos (or point to a hosted file) when HRSM supplies the real video.
+  hero: {
+    video: "/videos/hero-placeholder.mp4",
+    poster: "/videos/hero-poster.jpg",
+  },
   social: {
     // placeholder: replace with real URLs
     facebook: "https://facebook.com",
