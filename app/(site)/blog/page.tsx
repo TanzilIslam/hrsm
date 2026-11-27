@@ -45,7 +45,7 @@ export default async function BlogPage({
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((p) => (
               <li key={p.id}>
-                <PostCard post={p} />
+                <PostCard post={p} headingLevel={2} />
               </li>
             ))}
           </ul>

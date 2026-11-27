@@ -18,7 +18,7 @@ Every module ends with `pnpm validate` passing. Day counts are rough estimates f
 | 10 | [Static pages](./10-static-pages.md): About, Team, Clients, testimonials | 1 | 2 | [x] |
 | 11 | [Home](./11-home.md): homepage assembled from live data | 6, 7, 10 | 3 | [x] |
 | 12 | [SEO and analytics](./12-seo-analytics.md) | 6–11 | 1 | [x] |
-| 13 | [QA and hardening](./13-qa-hardening.md): security, a11y, performance | all | 2 | [ ] |
+| 13 | [QA and hardening](./13-qa-hardening.md): security, a11y, performance | all | 2 | [x] |
 | 14 | [Deployment and handover](./14-deployment-handover.md) | 13 | 1 | [ ] |
 
 Total about 25 days of work, inside the 28-day estimate in the PRD.

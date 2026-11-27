@@ -40,3 +40,6 @@ next-env.d.ts
 
 # keep the documented example
 !.env.example
+
+# database exports (contain personal data)
+/backups

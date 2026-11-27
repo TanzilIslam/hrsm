@@ -42,7 +42,7 @@ export function UserMenu({ user }: { user: { name: string; email: string } }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-label="Open user menu"
+        aria-label={`${initials(user.name)}, open user menu`}
         className="flex items-center gap-2 rounded-full p-1 pr-2 transition-colors outline-none hover:bg-secondary focus-visible:ring-3 focus-visible:ring-ring/50 data-popup-open:bg-secondary"
       >
         <span

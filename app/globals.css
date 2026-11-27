@@ -7,6 +7,8 @@
 @theme inline {
   --color-navy: #142b45;
   --color-brand-orange: #f28c28;
+  /* Darker orange for text on light backgrounds (5.3:1 or better). */
+  --color-brand-orange-text: #a8480a;
   --color-ink: #202a35;
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);

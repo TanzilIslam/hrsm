@@ -11,7 +11,7 @@ export default function NotFound() {
       <SiteHeader />
       <main className="flex-1">
         <Container className="py-24 text-center">
-          <p className="text-sm font-semibold tracking-wider text-brand-orange uppercase">
+          <p className="text-sm font-semibold tracking-wider text-brand-orange-text uppercase">
             404
           </p>
           <h1 className="mt-2 text-4xl font-bold text-navy">Page not found</h1>

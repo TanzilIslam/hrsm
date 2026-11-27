@@ -72,3 +72,7 @@ About, Team, Clients, and the legal pages read from `content/*.ts` (plain typed 
 ## SEO
 
 Base URL comes from `lib/site-url.ts` (`NEXT_PUBLIC_SITE_URL`). Every public page sets `alternates.canonical`; detail pages use `openGraphFor()` (`lib/seo.ts`) because page-level `openGraph` replaces the root one. Add new public routes to `app/sitemap.ts`. JSON-LD helpers are in `components/site/json-ld.tsx`.
+
+## Hardening notes
+
+Security headers and the CSP live in `next.config.ts`; adding a new third-party script, frame, or image host means updating the CSP there. Use `text-brand-orange-text` (not `text-brand-orange`) for orange text on light backgrounds. `pnpm db:export` backs up content to `backups/`; `pnpm db:clear-samples` removes seeded placeholder projects and the welcome post. Run `pnpm audit` before releases (vulnerable transitive packages are pinned in `pnpm-workspace.yaml` `overrides`).

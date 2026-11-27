@@ -59,7 +59,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="text-sm font-semibold tracking-wider text-brand-orange uppercase">
+        <p className="text-sm font-semibold tracking-wider text-brand-orange-text uppercase">
           {eyebrow}
         </p>
       )}
@@ -116,7 +116,7 @@ export function CtaBand({
       <Container className="flex flex-col items-start gap-6 py-12 md:flex-row md:items-center md:justify-between">
         <div className="max-w-xl">
           <h2 className="text-2xl font-bold text-navy md:text-3xl">{title}</h2>
-          <p className="mt-2 text-navy/80">{description}</p>
+          <p className="mt-2 text-navy">{description}</p>
         </div>
         <Link
           href={href}

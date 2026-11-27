@@ -35,9 +35,17 @@ export default async function HomePage() {
     <>
       {/* 1. Hero */}
       <section className="relative isolate overflow-hidden bg-navy text-white">
-        {site.hero.video && (
-          <HeroVideo src={site.hero.video} poster={site.hero.poster} />
+        {site.hero.poster && (
+          <Image
+            src={site.hero.poster}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         )}
+        {site.hero.video && <HeroVideo src={site.hero.video} />}
         <div
           aria-hidden
           className="absolute inset-0 bg-linear-to-r from-navy/90 via-navy/70 to-navy/30"
@@ -76,7 +84,7 @@ export default async function HomePage() {
       <Section>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="space-y-5">
-            <p className="text-sm font-semibold tracking-wider text-brand-orange uppercase">
+            <p className="text-sm font-semibold tracking-wider text-brand-orange-text uppercase">
               About {site.name}
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-navy md:text-4xl">
@@ -89,7 +97,7 @@ export default async function HomePage() {
               href="/about"
               className={buttonVariants({ variant: "outline", size: "lg" })}
             >
-              Learn More
+              Learn more about {site.name}
               <ArrowRightIcon />
             </Link>
           </div>

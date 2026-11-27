@@ -32,7 +32,7 @@ export function NavLinks({
             aria-current={active ? "page" : undefined}
             className={cn(
               "text-sm font-medium transition-colors hover:text-brand-orange",
-              active ? "text-brand-orange" : "text-navy",
+              active ? "text-brand-orange-text" : "text-navy",
               linkClassName
             )}
           >

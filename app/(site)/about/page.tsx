@@ -37,7 +37,7 @@ export default function AboutPage() {
       <Section>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="space-y-5">
-            <p className="text-sm font-semibold tracking-wider text-brand-orange uppercase">
+            <p className="text-sm font-semibold tracking-wider text-brand-orange-text uppercase">
               {aboutIntro.eyebrow}
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-navy md:text-4xl">
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 aria-hidden
                 className="absolute top-1.5 -left-[2.55rem] size-4 rounded-full border-4 border-secondary bg-brand-orange"
               />
-              <p className="text-sm font-semibold text-brand-orange">
+              <p className="text-sm font-semibold text-brand-orange-text">
                 {h.year}
               </p>
               <h3 className="text-lg font-semibold text-navy">{h.title}</h3>

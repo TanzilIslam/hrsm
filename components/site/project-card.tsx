@@ -5,7 +5,14 @@ import { MapPinIcon } from "lucide-react"
 import { ImagePlaceholder, StatusBadge } from "@/components/site/sections"
 import type { ProjectCard as ProjectCardData } from "@/lib/queries/projects"
 
-export function ProjectCard({ project }: { project: ProjectCardData }) {
+export function ProjectCard({
+  project,
+  headingLevel = 3,
+}: {
+  project: ProjectCardData
+  headingLevel?: 2 | 3
+}) {
+  const Heading = headingLevel === 2 ? "h2" : "h3"
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -31,10 +38,12 @@ export function ProjectCard({ project }: { project: ProjectCardData }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
-        <p className="text-xs font-semibold tracking-wider text-brand-orange uppercase">
+        <p className="text-xs font-semibold tracking-wider text-brand-orange-text uppercase">
           {project.type}
         </p>
-        <h3 className="text-lg font-semibold text-navy">{project.name}</h3>
+        <Heading className="text-lg font-semibold text-navy">
+          {project.name}
+        </Heading>
         <p className="line-clamp-2 flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>

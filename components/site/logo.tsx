@@ -12,11 +12,7 @@ export function Logo({
   light?: boolean
 }) {
   return (
-    <Link
-      href="/"
-      aria-label={`${site.name} home`}
-      className={cn("flex items-center gap-2.5", className)}
-    >
+    <Link href="/" className={cn("flex items-center gap-2.5", className)}>
       <span
         aria-hidden
         className="grid size-9 place-items-center rounded-md bg-brand-orange text-lg font-extrabold text-navy"

@@ -5,7 +5,14 @@ import { ImagePlaceholder } from "@/components/site/sections"
 import { formatPostDate } from "@/lib/post-ui"
 import type { PostCard as PostCardData } from "@/lib/queries/posts"
 
-export function PostCard({ post }: { post: PostCardData }) {
+export function PostCard({
+  post,
+  headingLevel = 3,
+}: {
+  post: PostCardData
+  headingLevel?: 2 | 3
+}) {
+  const Heading = headingLevel === 2 ? "h2" : "h3"
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -28,10 +35,12 @@ export function PostCard({ post }: { post: PostCardData }) {
         )}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
-        <p className="text-xs font-semibold tracking-wider text-brand-orange uppercase">
+        <p className="text-xs font-semibold tracking-wider text-brand-orange-text uppercase">
           {formatPostDate(post.publishedAt)}
         </p>
-        <h3 className="text-lg font-semibold text-navy">{post.title}</h3>
+        <Heading className="text-lg font-semibold text-navy">
+          {post.title}
+        </Heading>
         <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
           {post.excerpt}
         </p>

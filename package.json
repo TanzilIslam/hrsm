@@ -17,7 +17,9 @@
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
     "validate": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm build",
     "db:seed": "tsx db/seed.ts",
-    "db:seed-admin": "tsx db/seed-admin.ts"
+    "db:seed-admin": "tsx db/seed-admin.ts",
+    "db:export": "tsx db/export.ts",
+    "db:clear-samples": "tsx db/clear-samples.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
