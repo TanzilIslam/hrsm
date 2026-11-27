@@ -2,6 +2,7 @@ import {
   BuildingIcon,
   FileTextIcon,
   HardHatIcon,
+  ImageIcon,
   InboxIcon,
   LayoutDashboardIcon,
   type LucideIcon,
@@ -36,4 +37,5 @@ export const adminNav: AdminNavItem[] = [
     ready: false,
   },
   { label: "Blog", href: "/admin/blog", icon: FileTextIcon, ready: false },
+  { label: "Media", href: "/admin/media", icon: ImageIcon, ready: true },
 ]

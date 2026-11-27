@@ -54,3 +54,9 @@ Build forms with `Form` / `FormField` / `fieldA11y` from `components/ui/form.tsx
 ## Admin shell
 
 Admin pages render inside `app/admin/(protected)/layout.tsx` (shadcn sidebar, navy backdrop). Add a nav entry in `lib/admin-nav.ts` and set `ready: true` once the pages exist. `components/ui/sidebar.tsx` and `hooks/use-mobile.ts` are hand-edited shadcn files; do not overwrite them when re-adding components.
+
+## Media
+
+Images are stored in Vercel Blob (store `hrsm-media`, `BLOB_READ_WRITE_TOKEN`). Upload and delete go through `app/api/admin/media`; use `ImageUploader` / `MediaPicker` from `components/admin/media/` in forms and `ConfirmDialog` before destructive actions. Image fields store a URL plus alt text. The Vercel project `hrsm` is linked locally (`.vercel/`, gitignored); `vercel env pull` overwrites `.env.local`, so pull to a temp file and copy only what you need.
+
+Buttons: the shadcn button was edited so icon-to-text gap is `gap-2` (default and lg sizes). Re-adding the button would overwrite this.

@@ -21,6 +21,10 @@ import {
 } from "@/components/ui/sidebar"
 import { adminNav } from "@/lib/admin-nav"
 
+// Shared look for nav buttons: roomy targets, orange tint for the active page.
+const navButton =
+  "h-10 gap-3 rounded-lg px-3 text-white/70 hover:bg-white/8 hover:text-white data-active:bg-brand-orange/15 data-active:font-semibold data-active:text-brand-orange [&>svg]:size-[18px] group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:overflow-hidden group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden"
+
 export function AdminSidebar() {
   const pathname = usePathname()
   const { setOpenMobile } = useSidebar()
@@ -34,10 +38,10 @@ export function AdminSidebar() {
     <Sidebar collapsible="icon" className="border-white/10">
       <AdminBackdrop glow={false} />
 
-      <SidebarHeader className="h-16 justify-center px-4">
+      <SidebarHeader className="h-16 justify-center border-b border-white/10 px-4 group-data-[collapsible=icon]:px-0">
         <Logo
           light
-          className="[&>span:last-child]:group-data-[collapsible=icon]:hidden"
+          className="group-data-[collapsible=icon]:justify-center [&>span:last-child]:group-data-[collapsible=icon]:hidden"
         />
       </SidebarHeader>
 
@@ -52,6 +56,7 @@ export function AdminSidebar() {
                 <SidebarMenuItem key={item.href}>
                   {item.ready ? (
                     <SidebarMenuButton
+                      className={navButton}
                       isActive={isActive(item.href)}
                       tooltip={item.label}
                       render={
@@ -69,7 +74,7 @@ export function AdminSidebar() {
                       <SidebarMenuButton
                         disabled
                         tooltip={`${item.label} (coming soon)`}
-                        className="opacity-50"
+                        className={`${navButton} opacity-45`}
                       >
                         <item.icon />
                         <span>{item.label}</span>

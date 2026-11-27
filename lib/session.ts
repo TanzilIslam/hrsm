@@ -30,3 +30,15 @@ export async function requireRole(...allowed: UserRole[]) {
   }
   return user
 }
+
+// For route handlers: returns the user, or null when not signed in or not
+// allowed (callers answer 401/403 themselves instead of redirecting).
+export async function getApiUser(...allowed: UserRole[]) {
+  const session = await getSession()
+  if (!session) return { user: null, status: 401 as const }
+  const role = session.user.role as UserRole
+  if (role !== "super_admin" && allowed.length && !allowed.includes(role)) {
+    return { user: null, status: 403 as const }
+  }
+  return { user: session.user, status: 200 as const }
+}

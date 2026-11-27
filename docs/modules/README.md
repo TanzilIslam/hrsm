@@ -10,7 +10,7 @@ Every module ends with `pnpm validate` passing. Day counts are rough estimates f
 | 2 | [Database](./2-database.md): schema for all content | 1 | 1 | [x] |
 | 3 | [Admin auth](./3-admin-auth.md): Super Admin login and route protection | 2 | 2 | [x] |
 | 4 | [Admin shell](./4-admin-shell.md): dashboard layout and overview | 3 | 1 | [x] |
-| 5 | [Media](./5-media.md): image upload and storage | 4 | 1 | [ ] |
+| 5 | [Media](./5-media.md): image upload and storage | 4 | 1 | [x] |
 | 6 | [Services](./6-services.md): admin CRUD + public pages | 4, 5 | 2 | [ ] |
 | 7 | [Projects](./7-projects.md): admin CRUD + public portfolio | 4, 5 | 3 | [ ] |
 | 8 | [Inquiries](./8-inquiries.md): contact form, inbox, email | 4 | 2 | [ ] |
@@ -47,6 +47,6 @@ Modules 6–10 are independent of each other once their dependencies are done, s
 
 | Decision | Needed by | Default if undecided |
 | -------- | --------- | -------------------- |
-| Image storage provider | Module 5 | Vercel Blob |
+| Image storage provider | Module 5 | Decided and built: Vercel Blob |
 | Email provider for inquiry notifications | Module 8 | Resend |
 | Auth approach (library vs. hand-rolled sessions) | Module 3 | Decided and built: Better Auth with the Drizzle adapter |
