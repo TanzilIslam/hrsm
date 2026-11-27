@@ -6,7 +6,7 @@ Every module ends with `pnpm validate` passing. Day counts are rough estimates f
 
 | # | Module | Depends on | Days | Status |
 | - | ------ | ---------- | ---- | ------ |
-| 1 | [Base](./1-base.md): design system, layout shell, conventions | | 2 | [ ] |
+| 1 | [Base](./1-base.md): design system, layout shell, conventions | | 2 | [x] |
 | 2 | [Database](./2-database.md): schema for all content | 1 | 1 | [ ] |
 | 3 | [Admin auth](./3-admin-auth.md): Super Admin login and route protection | 2 | 2 | [ ] |
 | 4 | [Admin shell](./4-admin-shell.md): dashboard layout and overview | 3 | 1 | [ ] |
