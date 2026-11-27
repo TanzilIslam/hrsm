@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { CheckCircle2Icon } from "lucide-react"
 
@@ -55,10 +56,22 @@ export default function AboutPage() {
               Meet our team
             </Link>
           </div>
-          <ImagePlaceholder
-            label="Company photo"
-            className="aspect-4/3 rounded-xl"
-          />
+          {aboutIntro.image ? (
+            <div className="relative aspect-4/3 overflow-hidden rounded-xl bg-secondary">
+              <Image
+                src={aboutIntro.image.url}
+                alt={aboutIntro.image.alt}
+                fill
+                sizes="(min-width: 1024px) 36rem, 95vw"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <ImagePlaceholder
+              label="Company photo"
+              className="aspect-4/3 rounded-xl"
+            />
+          )}
         </div>
       </Section>
 

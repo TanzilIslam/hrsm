@@ -1,0 +1,248 @@
+{
+  "hero-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/hero-1.jpg",
+    "alt": "Tower crane silhouetted against a dusk sky over a construction site",
+    "photographer": "Olivier Amyot",
+    "source": "https://unsplash.com/photos/crane-and-plane-in-the-sky-at-dusk-5KGLMgOkCdE"
+  },
+  "about-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/about-1.jpg",
+    "alt": "Engineers in safety vests surveying a large construction site",
+    "photographer": "Scott Blake",
+    "source": "https://unsplash.com/photos/seven-construction-workers-standing-on-white-field-x-ghf9LjrVg"
+  },
+  "proj-riverside-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-riverside-1.jpg",
+    "alt": "Modern apartment block with dark facade panels and large windows",
+    "photographer": "Luke van Zyl",
+    "source": "https://unsplash.com/photos/black-and-white-cocnrete-building-low-angle-photography-koH7IVuwRLw"
+  },
+  "proj-riverside-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-riverside-2.jpg",
+    "alt": "Multi-storey residential building with colourful balconies",
+    "photographer": "Isaac Quesada",
+    "source": "https://unsplash.com/photos/brown-and-white-concrete-building-s34TlUTPIf4"
+  },
+  "proj-riverside-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-riverside-3.jpg",
+    "alt": "Apartment tower facade lit by warm evening light",
+    "photographer": "Tobias Wilden",
+    "source": "https://unsplash.com/photos/apartment-building-reflecting-pink-sky-4453DIQWtsQ"
+  },
+  "proj-riverside-4": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-riverside-4.jpg",
+    "alt": "Contemporary residential building with brick and black cladding",
+    "photographer": "Wiktor Karkocha",
+    "source": "https://unsplash.com/photos/brown-and-black-house-WA2uSCbTXkI"
+  },
+  "proj-meridian-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-meridian-1.jpg",
+    "alt": "Glass curtain wall of a modern office building",
+    "photographer": "Christian Ladewig",
+    "source": "https://unsplash.com/photos/architectural-photography-of-glass-building-T0iFfJw-rB0"
+  },
+  "proj-meridian-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-meridian-2.jpg",
+    "alt": "Curved glass facade of a commercial tower against a blue sky",
+    "photographer": "Kenrick Baksh",
+    "source": "https://unsplash.com/photos/white-and-blue-glass-walled-building-Wm8opOd-MDE"
+  },
+  "proj-meridian-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-meridian-3.jpg",
+    "alt": "Skyscraper corner seen from below",
+    "photographer": "Patrick Tomasso",
+    "source": "https://unsplash.com/photos/low-angle-photography-curtain-wall-buildings-gMes5dNykus"
+  },
+  "proj-meridian-4": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-meridian-4.jpg",
+    "alt": "Business plaza towers with a sweeping glass facade",
+    "photographer": "Georgi Kalaydzhiev",
+    "source": "https://unsplash.com/photos/a-very-tall-building-next-to-a-very-tall-building-CZnDfXTNYV0"
+  },
+  "proj-karnaphuli-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-karnaphuli-1.jpg",
+    "alt": "Steel roof structure of an industrial hall",
+    "photographer": "Flanker Lee",
+    "source": "https://unsplash.com/photos/a-view-of-the-inside-of-a-metal-structure-1cdtE_xP2aQ"
+  },
+  "proj-karnaphuli-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-karnaphuli-2.jpg",
+    "alt": "Black steel bracing on an industrial building",
+    "photographer": "Declan Sun",
+    "source": "https://unsplash.com/photos/a-large-metal-structure-in-a-large-building-RM9Ju2fqauI"
+  },
+  "proj-karnaphuli-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-karnaphuli-3.jpg",
+    "alt": "Steel pipe bridge and framework at an industrial plant",
+    "photographer": "Jan Macháček",
+    "source": "https://unsplash.com/photos/abandoned-industrial-building-with-rusty-metal-structures-Db5ta-HrKMA"
+  },
+  "proj-karnaphuli-4": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-karnaphuli-4.jpg",
+    "alt": "Large factory building with chimneys and a clear sky",
+    "photographer": "Spencer Gu",
+    "source": "https://unsplash.com/photos/industrial-building-with-smokestacks-under-a-cloudy-sky-Xsd1FMUi5D4"
+  },
+  "proj-bypass-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-bypass-1.jpg",
+    "alt": "Road roller compacting fresh asphalt",
+    "photographer": "Michael Evans",
+    "source": "https://unsplash.com/photos/yellow-and-black-heavy-equipment-on-road-during-daytime-_P-hKe5H_o4"
+  },
+  "proj-bypass-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-bypass-2.jpg",
+    "alt": "Wide multi-lane urban highway with a city skyline",
+    "photographer": "Joyce Wu",
+    "source": "https://unsplash.com/photos/cars-on-road-near-city-buildings-during-daytime-9Tz6W8-Pyjw"
+  },
+  "proj-bypass-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-bypass-3.jpg",
+    "alt": "Newly laid road with a paving truck in the distance",
+    "photographer": "Tom Shamberger",
+    "source": "https://unsplash.com/photos/a-couple-of-trucks-that-are-on-a-road-WRbr71MxE-c"
+  },
+  "proj-lakeview-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-lakeview-1.jpg",
+    "alt": "Modern white villa with a swimming pool",
+    "photographer": "Ярослав Алексеенко",
+    "source": "https://unsplash.com/photos/white-and-brown-concrete-building-under-blue-sky-during-daytime-_TPTXZd9mOo"
+  },
+  "proj-lakeview-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-lakeview-2.jpg",
+    "alt": "Contemporary villa with a long terrace and pool",
+    "photographer": "Salman Saqib",
+    "source": "https://unsplash.com/photos/a-building-with-a-pool-z6UAWpQAhXs"
+  },
+  "proj-lakeview-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-lakeview-3.jpg",
+    "alt": "Modern two-storey house glowing at sunset",
+    "photographer": "Elite prop",
+    "source": "https://unsplash.com/photos/a-car-is-parked-in-front-of-a-house-hmlP-v0vJ5o"
+  },
+  "proj-heritage-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-heritage-1.jpg",
+    "alt": "Glass-partitioned office corridor with warm wood and lighting",
+    "photographer": "Nastuh Abootalebi",
+    "source": "https://unsplash.com/photos/hallway-between-glass-panel-doors-yWwob8kwOCk"
+  },
+  "proj-heritage-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-heritage-2.jpg",
+    "alt": "Open-plan office with desks and exposed brick walls",
+    "photographer": "Petr",
+    "source": "https://unsplash.com/photos/office-workspace-with-rows-of-desks-Ugnm0F4e00U"
+  },
+  "proj-heritage-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-heritage-3.jpg",
+    "alt": "Executive office with a white desk and wood paneling",
+    "photographer": "Musemind",
+    "source": "https://unsplash.com/photos/a-room-with-a-desk-and-a-chair-srTPWPbK0Dg"
+  },
+  "proj-greenfield-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-greenfield-1.jpg",
+    "alt": "Large white warehouse building under a cloudy sky",
+    "photographer": "Ryan Parker",
+    "source": "https://unsplash.com/photos/white-building-seQbRNo90Xw"
+  },
+  "proj-greenfield-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-greenfield-2.jpg",
+    "alt": "Empty warehouse hall with a polished floor and steel roof",
+    "photographer": "Craftsman Concrete Floors",
+    "source": "https://unsplash.com/photos/empty-industrial-warehouse-with-polished-concrete-floor-NADTQRbS0s4"
+  },
+  "proj-greenfield-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-greenfield-3.jpg",
+    "alt": "Logistics building with loading area and fence",
+    "photographer": "Mathias Reding",
+    "source": "https://unsplash.com/photos/large-industrial-warehouse-with-blue-gates-and-road-J-MU2AJNKiI"
+  },
+  "proj-seaview-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-seaview-1.jpg",
+    "alt": "Bright apartment living room with framed art",
+    "photographer": "Huy Nguyen",
+    "source": "https://unsplash.com/photos/living-room-with-television-and-armchair-AB-q9lwCVv8"
+  },
+  "proj-seaview-2": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-seaview-2.jpg",
+    "alt": "Elegant living room with a large sofa and pendant lights",
+    "photographer": "dada design",
+    "source": "https://unsplash.com/photos/a-living-room-filled-with-furniture-and-a-chandelier-8aQnBInxp1s"
+  },
+  "proj-seaview-3": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/proj-seaview-3.jpg",
+    "alt": "Double-height apartment lounge with a glass wall",
+    "photographer": "Aalo Lens",
+    "source": "https://unsplash.com/photos/luxurious-modern-living-room-with-large-windows-and-staircase-Ez7fz5mavj0"
+  },
+  "svc-building-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-building-1.jpg",
+    "alt": "Concrete frame of a building with scaffolding",
+    "photographer": "Ricardo Gomez Angel",
+    "source": "https://unsplash.com/photos/grayscale-photography-of-piled-racks-EqUFBrTIdeE"
+  },
+  "svc-civil-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-civil-1.jpg",
+    "alt": "Bridge section being lifted by a crane over a river",
+    "photographer": "Wolfgang Weiser",
+    "source": "https://unsplash.com/photos/crane-lifting-bridge-section-over-water-mKqFj9O9JDY"
+  },
+  "svc-industrial-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-industrial-1.jpg",
+    "alt": "Industrial plant with tall chimneys beside the water",
+    "photographer": "Alex Simpson",
+    "source": "https://unsplash.com/photos/gray-and-red-factory-building-under-a-calm-blue-sky-9GwMIek9jnY"
+  },
+  "svc-road-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-road-1.jpg",
+    "alt": "Crew and rollers working on a new asphalt road",
+    "photographer": "Ray Donnelly",
+    "source": "https://unsplash.com/photos/a-couple-of-men-standing-on-top-of-a-road-_iBS7wyPLKE"
+  },
+  "svc-interior-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-interior-1.jpg",
+    "alt": "Paint roller on a tray during interior finishing",
+    "photographer": "Callum Hill",
+    "source": "https://unsplash.com/photos/a-close-up-of-a-paint-roller-on-a-paint-roller-jo4CWjIw4Wc"
+  },
+  "svc-structural-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-structural-1.jpg",
+    "alt": "Steel beams and joints lit in orange against the dark",
+    "photographer": "Alain Pham",
+    "source": "https://unsplash.com/photos/tokyo-tower-steel-girders-at-night-P_qvsF7Yodw"
+  },
+  "svc-management-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-management-1.jpg",
+    "alt": "Architectural sketches and drawing tools on a desk",
+    "photographer": "Christian Agbede",
+    "source": "https://unsplash.com/photos/architectural-floor-plan-sketch-with-markers-5BQFKcQrciI"
+  },
+  "svc-renovation-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/svc-renovation-1.jpg",
+    "alt": "Historic brick building under renovation with scaffolding",
+    "photographer": "Artists Eyes",
+    "source": "https://unsplash.com/photos/a-building-with-scaffolding-around-it-and-a-bicycle-sign-wrE2MS2VR9I"
+  },
+  "blog-milestone-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/blog-milestone-1.jpg",
+    "alt": "Glass skyscrapers with a tower crane against a blue sky",
+    "photographer": "Pavel Avakumov",
+    "source": "https://unsplash.com/photos/modern-skyscrapers-under-construction-with-cranes-y-puB7TgIe0"
+  },
+  "blog-safety-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/blog-safety-1.jpg",
+    "alt": "Red safety helmet on a construction site",
+    "photographer": "Ümit Yıldırım",
+    "source": "https://unsplash.com/photos/red-hard-hat-on-pavement-9OB46apMbC4"
+  },
+  "blog-materials-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/blog-materials-1.jpg",
+    "alt": "Workers fixing steel reinforcement bars for a concrete slab",
+    "photographer": "Etienne Girardet",
+    "source": "https://unsplash.com/photos/two-men-working-sgYamIzhAhg"
+  },
+  "blog-update-1": {
+    "url": "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/blog-update-1.jpg",
+    "alt": "Aerial view of a busy construction site",
+    "photographer": "Jamie Street",
+    "source": "https://unsplash.com/photos/aerial-photography-of-building-construction--7ip4yX5P6Q"
+  }
+}

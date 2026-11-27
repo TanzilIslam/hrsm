@@ -48,6 +48,7 @@ All are listed with comments in [.env.example](.env.example).
 | `pnpm db:migrate` | Apply migrations to the database in `DATABASE_URL` |
 | `pnpm db:studio` | Browse the database |
 | `pnpm db:seed` | Load sample services, projects, and a post (safe to re-run) |
+| `pnpm db:seed-demo` | Fill the database with realistic demo projects, photos, posts, and inquiries (see [docs/demo-content.md](docs/demo-content.md)) |
 | `pnpm db:seed-admin` | Create a Super Admin (`-- --reset-password` resets an existing one) |
 | `pnpm db:export` | Save all content to `backups/*.json` (gitignored, contains personal data) |
 | `pnpm db:clear-samples` | Preview, or with `--yes` delete, the placeholder projects and post |

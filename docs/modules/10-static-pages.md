@@ -51,3 +51,7 @@ How to fill in real content:
 
 - Photos and logos: upload in Admin, Media, then paste the image URL into `photo` or `logo`. The Blob host is already allowed for `next/image`.
 - Content changes need a code change and a deploy (the client chose the smaller dashboard). These pages can move into the dashboard later if HRSM wants to edit them itself.
+
+### Update: demo content
+
+The placeholder text above was replaced with invented **demo** content for design review: a nine-person team (no photos), six clients, four partners, three testimonials, a four-step history, and sample certifications, plus a real photo on the About page. See `docs/demo-content.md`. It still must be replaced with HRSM's real details.

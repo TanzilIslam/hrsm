@@ -17,11 +17,13 @@ export const site = {
     // Text for the Google Maps embed on the contact page (placeholder)
     mapQuery: "Dhaka, Bangladesh",
   },
-  // Homepage hero. Placeholder video and poster; replace the files in
-  // public/videos (or point to a hosted file) when HRSM supplies the real video.
+  // Homepage hero. The poster is a photo (DEMO: Unsplash). Add a short, compressed
+  // MP4 as `video` (for example in public/videos) and it fades in over the
+  // photo; leave it empty for a photo-only hero.
   hero: {
-    video: "/videos/hero-placeholder.mp4",
-    poster: "/videos/hero-poster.jpg",
+    video: "",
+    poster:
+      "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/hero-1.jpg",
   },
   social: {
     // placeholder: replace with real URLs

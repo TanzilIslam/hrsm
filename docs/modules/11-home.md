@@ -59,3 +59,7 @@ Notes for later work:
 
 - Featured projects and services update from the admin; statistics, testimonials, and "Why choose" come from the content files and are placeholders.
 - Real hero video, stats, and testimonials are needed from HRSM before launch.
+
+### Update: photo hero
+
+The homepage hero now shows a real construction photo (`site.hero.poster`) with `site.hero.video` left empty, so it is a photo-only hero. The video path still works: set `site.hero.video` to an MP4 and it fades in over the photo.

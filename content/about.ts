@@ -8,10 +8,14 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
-// PLACEHOLDER content. Replace with HRSM's real text; the pages render
-// whatever is here, so no component changes are needed.
+// DEMO content (invented, for design review). Replace with HRSM's real text;
+// the pages render whatever is here, so no component changes are needed.
 
 export const aboutIntro = {
+  image: {
+    url: "https://e2ghm7xyzayxjb1o.public.blob.vercel-storage.com/media/demo/about-1.jpg",
+    alt: "Engineers in safety vests surveying a large construction site",
+  },
   eyebrow: "Who we are",
   title: "A construction company built on trust and craftsmanship",
   paragraphs: [
@@ -62,19 +66,24 @@ export const coreValues: { title: string; text: string; icon: LucideIcon }[] = [
 
 export const history: { year: string; title: string; text: string }[] = [
   {
-    year: "Year",
-    title: "Company founded",
-    text: "HRSM began as a small team delivering residential projects.",
+    year: "2009",
+    title: "Company founded in Dhaka",
+    text: "HRSM began with a small team of engineers delivering private homes and small apartment buildings.",
   },
   {
-    year: "Year",
-    title: "Expanded into commercial work",
-    text: "We took on larger commercial buildings and grew our engineering team.",
+    year: "2014",
+    title: "Expanded into commercial buildings",
+    text: "We took on offices and shopping complexes and grew our in-house engineering and project management teams.",
   },
   {
-    year: "Year",
+    year: "2019",
     title: "Industrial and infrastructure projects",
-    text: "We added factories, roads, and structural engineering to our services.",
+    text: "Factories, warehouses, and roads joined our portfolio, along with a dedicated structural engineering unit.",
+  },
+  {
+    year: "2024",
+    title: "Landmark towers and logistics hubs",
+    text: "We started a 20-storey commercial tower in Gulshan and a 22,000 square metre logistics hub in Narayanganj.",
   },
 ]
 
@@ -87,7 +96,20 @@ export const strengths = [
 ]
 
 export const certifications: { title: string; text: string }[] = [
-  { title: "Certification name", text: "Issuing body and year" },
-  { title: "Registration or license", text: "Authority and number" },
-  { title: "Award or recognition", text: "Organization and year" },
+  {
+    title: "Quality management certification",
+    text: "Sample entry: certifying body and year",
+  },
+  {
+    title: "Occupational health and safety certification",
+    text: "Sample entry: certifying body and year",
+  },
+  {
+    title: "Registered contractor, Class A",
+    text: "Sample entry: registering authority and number",
+  },
+  {
+    title: "Best Residential Project nominee",
+    text: "Sample entry: awarding organization and year",
+  },
 ]

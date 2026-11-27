@@ -80,3 +80,7 @@ Security headers and the CSP live in `next.config.ts`; adding a new third-party 
 ## Deployment
 
 Production is https://hrsm-mu.vercel.app (Vercel project `hrsm`, linked to GitHub; pushing to main deploys, or run `vercel deploy --prod`). Production env vars are set in Vercel, not in the repo. Production admin credentials are in the local, gitignored `.env.production.local`. See `README.md` and `docs/modules/14-deployment-handover.md`.
+
+## Demo content
+
+`pnpm db:seed-demo` loads realistic demo projects, photos, posts, and inquiries into whatever database `DATABASE_URL` points at (locally the Neon `development` branch); `content/*.ts` also holds invented demo team, clients, and testimonials. Photo credits and warnings are in `docs/demo-content.md`. `db/upload-demo-photos.ts` was the one-off uploader and normally does not need to run again. Everything must be replaced with real content before launch.
