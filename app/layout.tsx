@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
+import { Toaster } from "@/components/ui/sonner"
 import { site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
@@ -39,7 +40,10 @@ export default function RootLayout({
         inter.variable
       )}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }

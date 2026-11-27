@@ -36,5 +36,21 @@ Prettier: no semicolons, double quotes, 2-space indent, `trailingComma: es5`, wi
 
 Neon project `hrsm` (`lucky-scene-40954637`, branch `main`, db `neondb`). `DATABASE_URL` lives in `.env.local` (gitignored); get it with `neon connection-string --project-id lucky-scene-40954637`.
 
-- Schema: `db/schema.ts`; client: `db/index.ts` (`drizzle-orm/neon-http`); migrations output to `drizzle/`; config in `drizzle.config.ts`.
+- Schema: `db/schema.ts` (services, projects, project_images, posts, inquiries, media, plus Better Auth tables user/session/account/verification/rate_limit); Zod input schemas in `db/validation.ts` (via `drizzle-zod`); client: `db/index.ts` (`drizzle-orm/neon-http`); migrations output to `drizzle/`; config in `drizzle.config.ts`.
+- `pnpm db:seed` loads idempotent sample data (`db/seed.ts`, matched by slug). `drizzle-kit generate` needs a TTY when it cannot tell a rename from a drop-and-create.
 - Schema change workflow: edit `db/schema.ts` → `pnpm db:generate` → `pnpm db:migrate`. `pnpm db:push` syncs directly (dev only); `pnpm db:studio` opens Drizzle Studio.
+
+## Auth (Better Auth)
+
+- Config in `lib/auth.ts`; browser client in `lib/auth-client.ts`; handler at `app/api/auth/[...all]/route.ts`. Sign-up is disabled: create admins with `pnpm db:seed-admin` (reads `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_NAME`). Env vars are listed in `.env.example`.
+- Authorize on the server: call `requireUser()` or `requireRole(...)` from `lib/session.ts` at the top of every admin page, layout, and server action. `proxy.ts` only does an optimistic cookie check and is not a security boundary.
+- Admin routes live under `app/admin`; protected pages go in the `(protected)` group, the login page stays outside it.
+- Only `super_admin` exists at launch; the `user_role` enum already has editor, project_manager, inquiry_manager.
+
+## Forms
+
+Build forms with `Form` / `FormField` / `fieldA11y` from `components/ui/form.tsx` (fixed spacing: gap-5 between fields, gap-2 inside a field; do not hand-roll `space-y-*`). Validate with Zod and show per-field errors through `FormField`; give every input a placeholder; use `PasswordInput` for passwords. Report API/server results with `toast` from `sonner` (global `<Toaster />` in the root layout). `components/admin/login-form.tsx` is the reference example.
+
+## Admin shell
+
+Admin pages render inside `app/admin/(protected)/layout.tsx` (shadcn sidebar, navy backdrop). Add a nav entry in `lib/admin-nav.ts` and set `ready: true` once the pages exist. `components/ui/sidebar.tsx` and `hooks/use-mobile.ts` are hand-edited shadcn files; do not overwrite them when re-adding components.
