@@ -1,0 +1,1 @@
+ALTER TABLE "projects" ADD COLUMN "cover_image_alt" varchar(200) DEFAULT '' NOT NULL;

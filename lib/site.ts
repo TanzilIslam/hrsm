@@ -12,6 +12,10 @@ export const site = {
     phone: "+880 1700-000000",
     email: "info@hrsm.example",
     hours: "Sat – Thu, 9:00 AM – 6:00 PM",
+    // WhatsApp number in international format, digits only (placeholder)
+    whatsapp: "8801700000000",
+    // Text for the Google Maps embed on the contact page (placeholder)
+    mapQuery: "Dhaka, Bangladesh",
   },
   social: {
     // placeholder: replace with real URLs
@@ -42,13 +46,3 @@ export const footerLinks = {
     { label: "Terms", href: "/terms" },
   ],
 } as const
-
-// Placeholder list until services come from the database (module 6).
-export const footerServices = [
-  "Building Construction",
-  "Civil Engineering",
-  "Industrial Construction",
-  "Road Construction",
-  "Interior & Exterior",
-  "Structural Engineering",
-] as const

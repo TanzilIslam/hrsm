@@ -25,7 +25,11 @@ import { adminNav } from "@/lib/admin-nav"
 const navButton =
   "h-10 gap-3 rounded-lg px-3 text-white/70 hover:bg-white/8 hover:text-white data-active:bg-brand-orange/15 data-active:font-semibold data-active:text-brand-orange [&>svg]:size-[18px] group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:overflow-hidden group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden"
 
-export function AdminSidebar() {
+export function AdminSidebar({
+  badges = {},
+}: {
+  badges?: Record<string, number>
+}) {
   const pathname = usePathname()
   const { setOpenMobile } = useSidebar()
 
@@ -55,20 +59,27 @@ export function AdminSidebar() {
               {adminNav.map((item) => (
                 <SidebarMenuItem key={item.href}>
                   {item.ready ? (
-                    <SidebarMenuButton
-                      className={navButton}
-                      isActive={isActive(item.href)}
-                      tooltip={item.label}
-                      render={
-                        <Link
-                          href={item.href}
-                          onClick={() => setOpenMobile(false)}
-                        />
-                      }
-                    >
-                      <item.icon />
-                      <span>{item.label}</span>
-                    </SidebarMenuButton>
+                    <>
+                      <SidebarMenuButton
+                        className={navButton}
+                        isActive={isActive(item.href)}
+                        tooltip={item.label}
+                        render={
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpenMobile(false)}
+                          />
+                        }
+                      >
+                        <item.icon />
+                        <span>{item.label}</span>
+                      </SidebarMenuButton>
+                      {badges[item.href] ? (
+                        <SidebarMenuBadge className="rounded-full bg-brand-orange px-1.5 text-[11px] font-bold text-navy">
+                          {badges[item.href] > 99 ? "99+" : badges[item.href]}
+                        </SidebarMenuBadge>
+                      ) : null}
+                    </>
                   ) : (
                     <>
                       <SidebarMenuButton

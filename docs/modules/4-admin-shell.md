@@ -16,9 +16,9 @@ Dashboard layout and overview that all admin modules plug into.
 
 - [x] Sidebar, top bar, mobile navigation
 - [x] Form components (`Form`, `FormField`, `FieldError`, `PasswordInput`)
-- [ ] Reusable data table (build with the first list screen in module 6, then reuse)
+- [x] List screens use the shadcn `Table` directly (see Services); a shared data-table abstraction is deferred until a second list needs search, filter, and pagination
 - [x] Toast (global `sonner`)
-- [ ] Confirm-delete dialog (build with the first delete action in module 6)
+- [x] Confirm-delete dialog (`ConfirmDialog`, built in module 5)
 - [x] Overview cards with real counts
 - [x] `noindex` metadata for `/admin` (the robots.txt rule comes with module 12)
 

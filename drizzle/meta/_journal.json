@@ -29,6 +29,27 @@
       "when": 1795798530351,
       "tag": "0003_auth_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1795801328883,
+      "tag": "0004_service_image_alt",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1795802123122,
+      "tag": "0005_project_cover_alt",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1795804127271,
+      "tag": "0006_post_cover_alt",
+      "breakpoints": true
     }
   ]
 }

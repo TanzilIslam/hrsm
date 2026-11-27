@@ -51,6 +51,7 @@ export const services = pgTable(
     content: text().notNull().default(""),
     icon: varchar({ length: 60 }),
     image: text(),
+    imageAlt: varchar("image_alt", { length: 200 }).notNull().default(""),
     sortOrder: integer("sort_order").notNull().default(0),
     published: boolean().notNull().default(true),
     createdAt: createdAt().notNull(),
@@ -74,6 +75,9 @@ export const projects = pgTable(
     completionDate: date("completion_date", { mode: "string" }),
     featured: boolean().notNull().default(false),
     coverImage: text("cover_image"),
+    coverImageAlt: varchar("cover_image_alt", { length: 200 })
+      .notNull()
+      .default(""),
     published: boolean().notNull().default(false),
     createdAt: createdAt().notNull(),
     updatedAt: updatedAt(),
@@ -107,6 +111,9 @@ export const posts = pgTable(
     excerpt: text().notNull().default(""),
     content: text().notNull().default(""),
     coverImage: text("cover_image"),
+    coverImageAlt: varchar("cover_image_alt", { length: 200 })
+      .notNull()
+      .default(""),
     published: boolean().notNull().default(false),
     publishedAt: timestamp("published_at", { withTimezone: true }),
     createdAt: createdAt().notNull(),

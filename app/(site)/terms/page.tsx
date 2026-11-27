@@ -1,9 +1,13 @@
 import type { Metadata } from "next"
 
-import { PagePlaceholder } from "@/components/site/page-placeholder"
+import { LegalPage } from "@/components/site/legal-page"
+import { termsOfUse } from "@/content/legal"
 
-export const metadata: Metadata = { title: "Terms" }
+export const metadata: Metadata = {
+  title: "Terms",
+  description: "The terms for using the HRSM website.",
+}
 
-export default function Page() {
-  return <PagePlaceholder title="Terms" description="" />
+export default function TermsPage() {
+  return <LegalPage doc={termsOfUse} />
 }

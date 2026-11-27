@@ -1,0 +1,1 @@
+ALTER TABLE "services" ADD COLUMN "image_alt" varchar(200) DEFAULT '' NOT NULL;

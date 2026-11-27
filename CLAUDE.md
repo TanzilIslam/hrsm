@@ -60,3 +60,11 @@ Admin pages render inside `app/admin/(protected)/layout.tsx` (shadcn sidebar, na
 Images are stored in Vercel Blob (store `hrsm-media`, `BLOB_READ_WRITE_TOKEN`). Upload and delete go through `app/api/admin/media`; use `ImageUploader` / `MediaPicker` from `components/admin/media/` in forms and `ConfirmDialog` before destructive actions. Image fields store a URL plus alt text. The Vercel project `hrsm` is linked locally (`.vercel/`, gitignored); `vercel env pull` overwrites `.env.local`, so pull to a temp file and copy only what you need.
 
 Buttons: the shadcn button was edited so icon-to-text gap is `gap-2` (default and lg sizes). Re-adding the button would overwrite this.
+
+## Admin CRUD pattern (reference: services)
+
+List page = server component querying the DB and passing rows to a client table; form = client component with Zod, field errors, and toasts; mutations = server actions in `actions.ts` next to the page, each starting with `requireRole(...)`, validating with the shared Zod schema, and calling `revalidatePath("/", "layout")`. Public pages read through `lib/queries/*` (published rows only). Do not add `loading.tsx` under `app/(site)` (it turns `notFound()` into a 200). Drizzle puts Postgres error codes on `error.cause.code`.
+
+## Static content
+
+About, Team, Clients, and the legal pages read from `content/*.ts` (plain typed data; all placeholder until the client supplies real content). Keep copy out of components. Icons in content files are Lucide component references.

@@ -7,6 +7,10 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { count, eq } from "drizzle-orm"
+
+import { db } from "@/db"
+import { inquiries } from "@/db/schema"
 import { requireUser } from "@/lib/session"
 
 // Sidebar colors are scoped to the admin area: navy surface, orange accents.
@@ -27,11 +31,15 @@ export default async function ProtectedLayout({
   children: React.ReactNode
 }) {
   const user = await requireUser()
+  const [{ unread }] = await db
+    .select({ unread: count() })
+    .from(inquiries)
+    .where(eq(inquiries.status, "new"))
 
   return (
     <TooltipProvider>
       <SidebarProvider style={sidebarTheme}>
-        <AdminSidebar />
+        <AdminSidebar badges={{ "/admin/inquiries": unread }} />
         <SidebarInset className="bg-secondary">
           <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b bg-white/90 px-4 backdrop-blur">
             <SidebarTrigger />

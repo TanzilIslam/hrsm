@@ -18,15 +18,36 @@ Placeholders are clearly typed so a swap to real content is a data-only change. 
 
 ## Tasks
 
-- [ ] Define content types and files in `content/`
-- [ ] About page sections
-- [ ] Team page with grouped members
-- [ ] Clients, partners, and testimonials sections
-- [ ] Privacy and terms pages
-- [ ] Per-page metadata
+- [x] Define content types and files in `content/`
+- [x] About page sections
+- [x] Team page with grouped members
+- [x] Clients, partners, and testimonials sections
+- [x] Privacy and terms pages
+- [x] Per-page metadata
 
 ## Done when
 
 - All pages render from content files with no hardcoded copy in components.
 - Replacing a placeholder needs only a content-file edit.
 - `pnpm validate` passes.
+
+## Status: done
+
+All five pages render from content files; `pnpm validate` passes and each page was loaded in the browser (200, correct title and headings).
+
+What exists:
+
+- `content/about.ts`, `content/team.ts`, `content/clients.ts`, `content/legal.ts`, `content/home.ts`: typed, plain TypeScript data. Edit these files to change copy; no component edits are needed.
+- `/about`: intro with a photo slot, mission and vision, four core values, history timeline, strengths, certifications.
+- `/team`: groups (Leadership, Engineering and design, Delivery); members show a photo or initials, name, designation, and bio.
+- `/clients`: client and partner grids (logo or name) and testimonials (`components/site/testimonial-card.tsx`).
+- `/privacy` and `/terms`: rendered by `components/site/legal-page.tsx` from `content/legal.ts`.
+- `content/home.ts` already holds the homepage statistics and the "Why choose HRSM" items for module 11, and `TestimonialCard` is ready for it.
+- The old `PagePlaceholder` component was removed; every public page now has real content.
+
+**Everything here is placeholder until HRSM supplies real details**: team names show "Name to be added", client and partner names are "Client name" or "Partner name", history years read "Year", certifications are generic, the statistics are sample numbers, and the testimonials are marked as placeholders. The Privacy Policy and Terms are basic drafts that HRSM should review, ideally with a lawyer, before launch.
+
+How to fill in real content:
+
+- Photos and logos: upload in Admin, Media, then paste the image URL into `photo` or `logo`. The Blob host is already allowed for `next/image`.
+- Content changes need a code change and a deploy (the client chose the smaller dashboard). These pages can move into the dashboard later if HRSM wants to edit them itself.

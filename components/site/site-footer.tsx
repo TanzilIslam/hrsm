@@ -2,7 +2,8 @@ import Link from "next/link"
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
 
 import { Logo } from "@/components/site/logo"
-import { footerLinks, footerServices, site } from "@/lib/site"
+import { getPublishedServices } from "@/lib/queries/services"
+import { footerLinks, site } from "@/lib/site"
 
 function FooterColumn({
   title,
@@ -23,7 +24,9 @@ function FooterColumn({
 
 const linkClass = "text-sm text-white/75 transition-colors hover:text-white"
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const services = (await getPublishedServices()).slice(0, 6)
+
   return (
     <footer className="bg-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
@@ -70,10 +73,10 @@ export function SiteFooter() {
 
         <FooterColumn title="Services">
           <ul className="space-y-2.5">
-            {footerServices.map((s) => (
-              <li key={s}>
-                <Link href="/services" className={linkClass}>
-                  {s}
+            {services.map((s) => (
+              <li key={s.id}>
+                <Link href={`/services/${s.slug}`} className={linkClass}>
+                  {s.title}
                 </Link>
               </li>
             ))}

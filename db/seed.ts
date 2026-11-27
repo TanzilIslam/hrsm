@@ -50,6 +50,26 @@ const services = [
   ["renovation", "Renovation", "Building renovation and remodeling", "wrench"],
 ] as const
 
+// Placeholder service copy (replace with HRSM's real text in the admin).
+const serviceContent: Record<string, string> = {
+  "building-construction":
+    "We build residential and commercial buildings from foundation to handover, with careful planning, quality materials, and clear communication at every stage.\n\nFrom apartment blocks to office buildings, our teams follow engineering standards and deliver on schedule.",
+  "civil-engineering":
+    "Our civil engineering team handles site works, drainage, earthworks, and the structures that support them.\n\nWe combine practical site experience with sound engineering to deliver safe, durable results.",
+  "industrial-construction":
+    "We construct factories, warehouses, and industrial facilities designed around your production flow, loads, and future expansion.\n\nSpeed, safety, and long-term reliability guide every industrial project we take on.",
+  "road-construction":
+    "We deliver roads, pavements, and supporting infrastructure, including base preparation, drainage, and surfacing.\n\nOur crews work to specification and keep disruption to a minimum.",
+  "interior-exterior":
+    "From interior fit-outs to façades and landscaping, we finish spaces so they look good and last.\n\nOur team coordinates design, materials, and trades so the finishing stage runs smoothly.",
+  "structural-engineering":
+    "We provide structural design and review for buildings and infrastructure, balancing safety, cost, and buildability.\n\nOur engineers work closely with architects and site teams from concept to completion.",
+  "project-management":
+    "We manage construction projects end to end: scheduling, procurement, cost control, quality, and safety.\n\nYou get a single point of accountability and regular, honest progress updates.",
+  renovation:
+    "We renovate and remodel existing buildings, from targeted upgrades to full refurbishments.\n\nWe plan around occupants, protect what stays, and bring older buildings up to modern standards.",
+}
+
 const projects = [
   {
     slug: "sample-residential-tower",
@@ -89,6 +109,16 @@ const projects = [
   },
 ] as const
 
+// Placeholder project copy (replace with real details in the admin).
+const projectContent: Record<string, string> = {
+  "sample-residential-tower":
+    "A placeholder entry for a completed residential tower.\n\nReplace this with the project scope, number of floors, floor area, and the key challenges your team solved.",
+  "sample-factory-complex":
+    "A placeholder entry for an ongoing industrial complex.\n\nReplace this with the facility size, structure type, and the current phase of construction.",
+  "sample-commercial-plaza":
+    "A placeholder entry for an upcoming commercial plaza.\n\nReplace this with the planned scope, expected timeline, and design highlights.",
+}
+
 const posts = [
   {
     slug: "welcome-to-the-new-hrsm-website",
@@ -108,6 +138,7 @@ async function main() {
     services: servicesTable,
   } = await import("./schema")
   const { postInput, projectInput, serviceInput } = await import("./validation")
+  const { and, eq } = await import("drizzle-orm")
 
   await db
     .insert(servicesTable)
@@ -125,10 +156,25 @@ async function main() {
     )
     .onConflictDoNothing({ target: servicesTable.slug })
 
+  // Fill empty content on existing sample services without touching edits.
+  for (const [slug, text] of Object.entries(serviceContent)) {
+    await db
+      .update(servicesTable)
+      .set({ content: text })
+      .where(and(eq(servicesTable.slug, slug), eq(servicesTable.content, "")))
+  }
+
   await db
     .insert(projectsTable)
     .values(projects.map((p) => projectInput.parse(p)))
     .onConflictDoNothing({ target: projectsTable.slug })
+
+  for (const [slug, body] of Object.entries(projectContent)) {
+    await db
+      .update(projectsTable)
+      .set({ content: body })
+      .where(and(eq(projectsTable.slug, slug), eq(projectsTable.content, "")))
+  }
 
   await db
     .insert(postsTable)
