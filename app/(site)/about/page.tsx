@@ -21,6 +21,7 @@ import {
 import { site } from "@/lib/site"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us",
   description: `Learn about ${site.fullName}: our story, mission, values, strengths, and certifications.`,
 }

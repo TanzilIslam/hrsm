@@ -9,6 +9,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { getPublishedPosts } from "@/lib/queries/posts"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "News & Blog",
   description:
     "Company news, project updates, and construction industry insights from HRSM.",

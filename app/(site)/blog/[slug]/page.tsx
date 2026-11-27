@@ -5,6 +5,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeftIcon } from "lucide-react"
 
+import { JsonLd, breadcrumbJsonLd } from "@/components/site/json-ld"
 import { Markdown } from "@/components/site/markdown"
 import { PostCard } from "@/components/site/post-card"
 import {
@@ -15,6 +16,9 @@ import {
 } from "@/components/site/sections"
 import { formatPostDate } from "@/lib/post-ui"
 import { getPublishedPostBySlug, getRecentPosts } from "@/lib/queries/posts"
+import { openGraphFor } from "@/lib/seo"
+import { site } from "@/lib/site"
+import { absoluteUrl } from "@/lib/site-url"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -24,11 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
-    openGraph: {
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: openGraphFor({
+      title: post.title,
+      description: post.excerpt,
+      image: post.coverImage,
       type: "article",
       publishedTime: post.publishedAt?.toISOString(),
-      images: post.coverImage ? [post.coverImage] : undefined,
-    },
+    }),
   }
 }
 
@@ -64,6 +71,27 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.publishedAt?.toISOString(),
+          dateModified: post.updatedAt.toISOString(),
+          image: post.coverImage ? [post.coverImage] : undefined,
+          mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+          author: { "@type": "Organization", name: site.fullName },
+          publisher: { "@type": "Organization", name: site.fullName },
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       <PageHero
         title={post.title}
         description={formatPostDate(post.publishedAt)}

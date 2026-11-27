@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils"
 import { projectStatuses } from "@/lib/validation/project"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/projects" },
   title: "Projects",
   description:
     "Completed, ongoing, and upcoming construction projects by HRSM.",

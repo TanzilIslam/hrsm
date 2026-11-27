@@ -13,6 +13,7 @@ import { getPublishedServices } from "@/lib/queries/services"
 import { site } from "@/lib/site"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us",
   description:
     "Tell HRSM about your project. Send an inquiry, call, or message us on WhatsApp.",

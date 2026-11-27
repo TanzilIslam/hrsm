@@ -13,6 +13,7 @@ import { getPublishedServices } from "@/lib/queries/services"
 import { serviceIcons, toIconKey } from "@/lib/service-icons"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Services",
   description:
     "Construction and engineering services by HRSM: building, civil, industrial, road, interior and exterior, structural, project management, and renovation.",

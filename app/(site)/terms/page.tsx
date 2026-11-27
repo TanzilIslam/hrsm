@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/site/legal-page"
 import { termsOfUse } from "@/content/legal"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms",
   description: "The terms for using the HRSM website.",
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
@@ -21,6 +22,8 @@ import { getPublishedServices } from "@/lib/queries/services"
 import { serviceIcons, toIconKey } from "@/lib/service-icons"
 import { site } from "@/lib/site"
 import { cn } from "@/lib/utils"
+
+export const metadata: Metadata = { alternates: { canonical: "/" } }
 
 export default async function HomePage() {
   const [services, projects] = await Promise.all([

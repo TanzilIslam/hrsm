@@ -16,6 +16,7 @@ import {
 } from "@/content/clients"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/clients" },
   title: "Clients & Partners",
   description: "Organizations that trust HRSM, and the partners we work with.",
 }

@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/site/legal-page"
 import { privacyPolicy } from "@/content/legal"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
   description: "How HRSM collects, uses, and protects your information.",
 }

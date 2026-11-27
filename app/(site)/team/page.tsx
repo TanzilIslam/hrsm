@@ -5,6 +5,7 @@ import { CtaBand, PageHero, Section } from "@/components/site/sections"
 import { teamGroups, type TeamMember } from "@/content/team"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/team" },
   title: "Our Team",
   description: "Meet the leadership, engineers, and project teams behind HRSM.",
 }

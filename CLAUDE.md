@@ -68,3 +68,7 @@ List page = server component querying the DB and passing rows to a client table;
 ## Static content
 
 About, Team, Clients, and the legal pages read from `content/*.ts` (plain typed data; all placeholder until the client supplies real content). Keep copy out of components. Icons in content files are Lucide component references.
+
+## SEO
+
+Base URL comes from `lib/site-url.ts` (`NEXT_PUBLIC_SITE_URL`). Every public page sets `alternates.canonical`; detail pages use `openGraphFor()` (`lib/seo.ts`) because page-level `openGraph` replaces the root one. Add new public routes to `app/sitemap.ts`. JSON-LD helpers are in `components/site/json-ld.tsx`.

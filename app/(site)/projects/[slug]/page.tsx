@@ -10,6 +10,7 @@ import {
   MapPinIcon,
 } from "lucide-react"
 
+import { JsonLd, breadcrumbJsonLd } from "@/components/site/json-ld"
 import { ProjectCard } from "@/components/site/project-card"
 import { ProjectGallery } from "@/components/site/project-gallery"
 import {
@@ -24,6 +25,7 @@ import {
   getPublishedProjectBySlug,
   getRelatedProjects,
 } from "@/lib/queries/projects"
+import { openGraphFor } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -44,9 +46,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.name,
     description: project.description,
-    openGraph: project.coverImage
-      ? { images: [project.coverImage] }
-      : undefined,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: openGraphFor({
+      title: project.name,
+      description: project.description,
+      image: project.coverImage,
+    }),
   }
 }
 
@@ -79,6 +84,13 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+          { name: project.name, path: `/projects/${project.slug}` },
+        ])}
+      />
       <PageHero title={project.name} description={project.description} />
       <Section>
         <div className="mx-auto max-w-4xl space-y-10">

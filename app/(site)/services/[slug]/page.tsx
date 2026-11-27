@@ -5,8 +5,10 @@ import { notFound } from "next/navigation"
 import { ArrowLeftIcon } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
+import { JsonLd, breadcrumbJsonLd } from "@/components/site/json-ld"
 import { CtaBand, PageHero, Section } from "@/components/site/sections"
 import { getPublishedServiceBySlug } from "@/lib/queries/services"
+import { openGraphFor } from "@/lib/seo"
 import { serviceIcons, toIconKey } from "@/lib/service-icons"
 import { cn } from "@/lib/utils"
 
@@ -18,7 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.title,
     description: service.shortDescription,
-    openGraph: service.image ? { images: [service.image] } : undefined,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: openGraphFor({
+      title: service.title,
+      description: service.shortDescription,
+      image: service.image,
+    }),
   }
 }
 
@@ -34,6 +41,13 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ])}
+      />
       <PageHero title={service.title} description={service.shortDescription} />
       <Section>
         <div className="mx-auto max-w-3xl space-y-8">
