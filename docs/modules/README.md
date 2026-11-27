@@ -19,9 +19,11 @@ Every module ends with `pnpm validate` passing. Day counts are rough estimates f
 | 11 | [Home](./11-home.md): homepage assembled from live data | 6, 7, 10 | 3 | [x] |
 | 12 | [SEO and analytics](./12-seo-analytics.md) | 6–11 | 1 | [x] |
 | 13 | [QA and hardening](./13-qa-hardening.md): security, a11y, performance | all | 2 | [x] |
-| 14 | [Deployment and handover](./14-deployment-handover.md) | 13 | 1 | [ ] |
+| 14 | [Deployment and handover](./14-deployment-handover.md) | 13 | 1 | [x] |
 
 Total about 25 days of work, inside the 28-day estimate in the PRD.
+
+**All 14 modules are built.** What remains is handover work that depends on HRSM (domain, real content, logo, email account); see the open list at the bottom of [14-deployment-handover.md](./14-deployment-handover.md).
 
 ## Dependency flow
 

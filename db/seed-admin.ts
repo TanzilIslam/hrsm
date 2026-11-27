@@ -1,6 +1,7 @@
 // Creates (or updates the role of) the first Super Admin from env variables.
 // Usage: set ADMIN_EMAIL, ADMIN_PASSWORD (min 10 chars), optional ADMIN_NAME
-// in .env.local, then run `pnpm db:seed-admin`. Safe to re-run.
+// in .env.local, then run `pnpm db:seed-admin`. Safe to re-run; add
+// `--reset-password` to set a new password for an existing admin.
 import { config } from "dotenv"
 
 config({ path: ".env.local" })
@@ -25,6 +26,18 @@ async function main() {
     await ctx.internalAdapter.updateUser(existing.user.id, {
       role: "super_admin",
     })
+    // --reset-password also sets the password from ADMIN_PASSWORD.
+    if (process.argv.includes("--reset-password")) {
+      await ctx.internalAdapter.updatePassword(
+        existing.user.id,
+        await ctx.password.hash(password)
+      )
+      // End every existing session so the old password stops working at once.
+      const sessions = await ctx.internalAdapter.listSessions(existing.user.id)
+      await ctx.internalAdapter.deleteSessions(sessions.map((x) => x.token))
+      console.log(`Password reset for ${email} (all sessions signed out)`)
+      return
+    }
     console.log(`Admin already exists: ${email} (role ensured: super_admin)`)
     return
   }

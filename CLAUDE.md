@@ -34,7 +34,7 @@ Prettier: no semicolons, double quotes, 2-space indent, `trailingComma: es5`, wi
 
 ## Database (Neon + Drizzle)
 
-Neon project `hrsm` (`lucky-scene-40954637`, branch `main`, db `neondb`). `DATABASE_URL` lives in `.env.local` (gitignored); get it with `neon connection-string --project-id lucky-scene-40954637`.
+Neon project `hrsm` (`lucky-scene-40954637`, db `neondb`). Branch `main` is **production** (used by the Vercel production environment); branch `development` is a copy used locally. `DATABASE_URL` in `.env.local` points at `development` (gitignored); get a string with `neon connection-string --project-id lucky-scene-40954637 --branch <name> --pooled`. Apply migrations to production by running `pnpm db:migrate` with `DATABASE_URL` set to the `main` string for that one command.
 
 - Schema: `db/schema.ts` (services, projects, project_images, posts, inquiries, media, plus Better Auth tables user/session/account/verification/rate_limit); Zod input schemas in `db/validation.ts` (via `drizzle-zod`); client: `db/index.ts` (`drizzle-orm/neon-http`); migrations output to `drizzle/`; config in `drizzle.config.ts`.
 - `pnpm db:seed` loads idempotent sample data (`db/seed.ts`, matched by slug). `drizzle-kit generate` needs a TTY when it cannot tell a rename from a drop-and-create.
@@ -76,3 +76,7 @@ Base URL comes from `lib/site-url.ts` (`NEXT_PUBLIC_SITE_URL`). Every public pag
 ## Hardening notes
 
 Security headers and the CSP live in `next.config.ts`; adding a new third-party script, frame, or image host means updating the CSP there. Use `text-brand-orange-text` (not `text-brand-orange`) for orange text on light backgrounds. `pnpm db:export` backs up content to `backups/`; `pnpm db:clear-samples` removes seeded placeholder projects and the welcome post. Run `pnpm audit` before releases (vulnerable transitive packages are pinned in `pnpm-workspace.yaml` `overrides`).
+
+## Deployment
+
+Production is https://hrsm-mu.vercel.app (Vercel project `hrsm`, linked to GitHub; pushing to main deploys, or run `vercel deploy --prod`). Production env vars are set in Vercel, not in the repo. Production admin credentials are in the local, gitignored `.env.production.local`. See `README.md` and `docs/modules/14-deployment-handover.md`.
