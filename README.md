@@ -70,7 +70,7 @@ DATABASE_URL="<main connection string>" pnpm db:migrate
 
 ## Deploying
 
-The Vercel project `hrsm` is linked to the GitHub repository, so pushing to `main` deploys to production. You can also deploy by hand with `vercel deploy --prod`. The production site is https://hrsm-mu.vercel.app until a custom domain is connected.
+The Vercel project `hrsm` is linked to the GitHub repository, so pushing to `main` deploys to production. You can also deploy by hand with `vercel deploy --prod`. The production site is https://hrsm-bd.vercel.app until a custom domain is connected.
 
 Production environment variables (Vercel, Settings, Environment Variables): `DATABASE_URL` (from the Neon integration), `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_SITE_URL`, `BLOB_READ_WRITE_TOKEN`, plus the optional ones above when ready.
 

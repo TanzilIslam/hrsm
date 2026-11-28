@@ -79,7 +79,7 @@ Security headers and the CSP live in `next.config.ts`; adding a new third-party 
 
 ## Deployment
 
-Production is https://hrsm-mu.vercel.app (Vercel project `hrsm`, linked to GitHub; pushing to main deploys, or run `vercel deploy --prod`). Production env vars are set in Vercel, not in the repo. Production admin credentials are in the local, gitignored `.env.production.local`. See `README.md` and `docs/modules/14-deployment-handover.md`.
+Production is https://hrsm-bd.vercel.app (Vercel project `hrsm`, linked to GitHub; pushing to main deploys, or run `vercel deploy --prod`). Production env vars are set in Vercel, not in the repo. Production admin credentials are in the local, gitignored `.env.production.local`. See `README.md` and `docs/modules/14-deployment-handover.md`.
 
 ## Demo content
 

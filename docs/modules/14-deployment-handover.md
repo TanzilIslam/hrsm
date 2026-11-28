@@ -33,12 +33,12 @@
 
 ## Status: deployed, handover items open
 
-The site is live at **https://hrsm-mu.vercel.app** (Vercel project `hrsm`, production). `pnpm validate` passes and the commits for modules 6 to 14 are on local `main` (push them to GitHub to keep the repository in sync with what is deployed; pushing also triggers an automatic production deploy).
+The site is live at **https://hrsm-bd.vercel.app** (Vercel project `hrsm`, production). `pnpm validate` passes and the commits for modules 6 to 14 are on local `main` (push them to GitHub to keep the repository in sync with what is deployed; pushing also triggers an automatic production deploy).
 
 What was done:
 
 - Neon: `main` is now **production** and a new `development` branch (a copy) is used locally, so local work can no longer touch live data. `.env.local` points at `development`. Migrations 0000 to 0006 are applied to both.
-- Vercel production environment variables: `DATABASE_URL` (Neon integration), `BLOB_READ_WRITE_TOKEN`, and new `BETTER_AUTH_SECRET` (a fresh secret, different from local), `BETTER_AUTH_URL`, and `NEXT_PUBLIC_SITE_URL`, both set to `https://hrsm-mu.vercel.app`.
+- Vercel production environment variables: `DATABASE_URL` (Neon integration), `BLOB_READ_WRITE_TOKEN`, and new `BETTER_AUTH_SECRET` (a fresh secret, different from local), `BETTER_AUTH_URL`, and `NEXT_PUBLIC_SITE_URL`, both set to `https://hrsm-bd.vercel.app`.
 - Production admin: the existing Super Admin `admin@hrsm.local` got a new random password (`pnpm db:seed-admin -- --reset-password`, which also signs out its old sessions). The login is saved in the local, gitignored file `.env.production.local`. It has not been used to sign in yet. **Sign in once, change the password in Admin, Account, and add a real admin email** (run `pnpm db:seed-admin` against production with the real address) before handing over.
 - Deployed with `vercel deploy --prod`. Production smoke test: all 17 public pages, robots.txt, sitemap.xml, social card, and static assets return 200; `/nope` returns 404; security headers present (HSTS, CSP, X-Frame-Options); `/admin` redirects to sign in and the admin API returns 401 when signed out; a test inquiry sent through the live contact form was saved in the production database and then removed.
 - Documentation: `README.md` (setup, environment variables, commands, branches, migrations, deploy, domain), `docs/admin-guide.md` and `docs/admin-guide.docx` (guide for HRSM staff).
@@ -53,3 +53,9 @@ Still to do before calling the project handed over:
 4. Run `pnpm db:clear-samples --yes` against production and replace the placeholder content, logo, hero video, and details listed in modules 10 and 11.
 5. Upgrade the Neon plan or schedule `pnpm db:export` (free plan keeps only 6 hours of history).
 6. Cross-browser check (Firefox, Safari, Edge) and a walkthrough with HRSM.
+
+### Update: domain changed to hrsm-bd.vercel.app, demo data on production
+
+The Vercel address changed to **https://hrsm-bd.vercel.app** (the old hrsm-mu address now returns 404). `BETTER_AUTH_URL` and `NEXT_PUBLIC_SITE_URL` in Vercel production were updated to the new address and the site was redeployed, so admin sign-in, canonical links, and the sitemap use it. Whenever the address changes again, update those two variables and redeploy.
+
+At HRSM's request the demo content (`pnpm db:seed-demo`) was also loaded into the **production** database, so the live site shows eight projects with photos, photos on all services, four blog posts, and seven sample inquiries. All of it is invented. Before launch, delete the demo projects, posts, inquiries, and images in the admin and replace the team, client, and testimonial text in `content/*.ts`.
